@@ -1026,6 +1026,44 @@ body.subpage-hero-ready .hero-media img {
   }
 }
 
+@media (min-width: 821px) and (max-width: 1200px) {
+  .unternehmen-page .hero-grid,
+  .service-page .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.4rem, 2.8vw, 2.1rem);
+  }
+
+  .unternehmen-page .unternehmen-hero-media,
+  .service-page .service-hero-media {
+    aspect-ratio: 16 / 11;
+  }
+
+  .unternehmen-page .hero-copy,
+  .service-page .hero-copy {
+    max-width: 54ch;
+  }
+
+  .service-page .grid.grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.95rem, 2vw, 1.2rem);
+  }
+
+  .service-page .grid.grid-3 .image-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .service-page .grid.grid-3 .image-card img {
+    margin-bottom: 0.85rem;
+    aspect-ratio: 16 / 11;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 @media (max-width: 520px) {
   :root {
     --container: min(1160px, calc(100% - 1.8rem));
@@ -1038,6 +1076,65 @@ body.subpage-hero-ready .hero-media img {
 }
 
 @media (max-width: 700px) {
+  .service-page .service-process-table-card h2,
+  .service-page .service-overview-card h2 {
+    margin-bottom: 0.85rem;
+  }
+
+  .service-page .service-table {
+    border: 0;
+    border-radius: 0;
+    display: block;
+  }
+
+  .service-page .service-table thead {
+    display: none;
+  }
+
+  .service-page .service-table tbody {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .service-page .service-table tr {
+    display: grid;
+    gap: 0.36rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.72rem;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .service-page .service-table td {
+    display: block;
+    padding: 0;
+    border-bottom: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .service-page .service-table td:first-child {
+    font-family: var(--font-title);
+    font-size: 0.96rem;
+    color: var(--accent-soft);
+  }
+
+  .service-page .service-table td:last-child {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .service-page .service-overview-card .list-clean {
+    gap: 0.56rem;
+  }
+
+  .service-page .service-overview-card .list-clean li {
+    padding-left: 0.7rem;
+    line-height: 1.5;
+    font-size: 0.93rem;
+    overflow-wrap: anywhere;
+  }
+
   .references-wall {
     grid-template-columns: 1fr;
   }
