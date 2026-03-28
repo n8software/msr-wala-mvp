@@ -117,6 +117,34 @@
     });
   }
 
+  function setupSubpageHeroSequence() {
+    if (doc.body.classList.contains("home-page")) {
+      return;
+    }
+
+    var sequences = Array.prototype.slice.call(doc.querySelectorAll("[data-hero-sequence]"));
+    if (!sequences.length) {
+      return;
+    }
+
+    sequences.forEach(function (sequence) {
+      Array.prototype.slice.call(sequence.children).forEach(function (child, index) {
+        child.style.animationDelay = String(70 + index * 90) + "ms";
+      });
+    });
+
+    if (motionQuery.matches) {
+      doc.body.classList.add("subpage-hero-ready");
+      return;
+    }
+
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        doc.body.classList.add("subpage-hero-ready");
+      });
+    });
+  }
+
   function applySocialConfig() {
     var cfg = window.SITE_CONFIG || {};
     var social = cfg.social || {};
@@ -155,6 +183,7 @@
   doc.addEventListener("DOMContentLoaded", function () {
     applyActiveNav();
     setupMobileNav();
+    setupSubpageHeroSequence();
     setupReveal();
     applySocialConfig();
     setCurrentYear();

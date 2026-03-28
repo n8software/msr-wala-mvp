@@ -30,7 +30,7 @@
       span.className = "word";
       span.textContent = word;
       span.setAttribute("aria-hidden", "true");
-      span.style.setProperty("--word-index", String(index));
+      span.style.animationDelay = String(220 + index * 70) + "ms";
       fragment.appendChild(span);
 
       if (index < words.length - 1) {
