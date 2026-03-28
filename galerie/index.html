@@ -15,8 +15,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/gallery.css" />
   </head>
-  <body>
+  <body class="gallery-page">
     <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
     <header class="site-header">
@@ -56,16 +57,17 @@
             <p class="kicker">Galerie</p>
             <h1>Einblicke in reale Einsätze</h1>
             <p class="hero-copy">
-              Eine kuratierte Auswahl aus laufenden und abgeschlossenen Arbeiten. Die Galerie wird für spätere
-              CMS-Pflege bereits modular aufgebaut.
+              Dokumentation aus laufenden und abgeschlossenen Arbeiten. Alle Bilder lassen sich vergrößern und komfortabel
+              durchblättern.
             </p>
-            <div class="badge">Kuratierte Auswahl</div>
+            <div class="badge">Interaktive Bildansicht</div>
           </div>
           <div class="hero-media panel reveal">
             <img
               src="https://www.msr-wala.de/s/cc_images/cache_2493809026.JPG?t=1736267654"
               alt="Galerieaufnahme einer mobilen Reparatursituation"
-              loading="eager" fetchpriority="high"
+              loading="eager"
+              fetchpriority="high"
               decoding="async"
             />
           </div>
@@ -77,72 +79,147 @@
           <header class="section-head reveal">
             <div>
               <p class="kicker">Fotodokumentation</p>
-              <h2>Projekt- und Einsatzbilder</h2>
+              <h2>Projekte und Reparaturmomente</h2>
             </div>
-            <p>
-              Neutrale Bildbeschreibungen sind bereits ergänzt. Erweiterte Caption-Taxonomie kann in der nächsten
-              Content-Runde ergänzt werden.
-            </p>
+            <p>Klicken Sie auf ein Bild, um es im Großformat zu öffnen.</p>
           </header>
 
-          <div class="gallery-grid">
-            <figure class="gallery-item reveal">
+          <div class="gallery-stage">
+            <a
+              class="gallery-card gallery-card-feature reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809027.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Schweißreparatur an Pressenkomponente in der Werkhalle"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809027.jpeg?t=1736267654" alt="Schweißreparatur an Pressenkomponente in der Werkhalle" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+              <span class="gallery-card-label">Werkhalle · Reparatureinsatz</span>
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-right"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809028.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Bearbeitung einer beschädigten Metallstruktur"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809028.jpeg?t=1736267654" alt="Bearbeitung einer beschädigten Metallstruktur" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809029.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Vor-Ort-Arbeit an einer Pressenanlage"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809029.jpeg?t=1736267654" alt="Vor-Ort-Arbeit an einer Pressenanlage" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-right"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809030.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Reparaturdetail an einem industriellen Bauteil"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809030.jpeg?t=1736267654" alt="Reparaturdetail an einem industriellen Bauteil" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card gallery-card-wide reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809031.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Schweißnahtbearbeitung mit mobiler Ausrüstung"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809031.jpeg?t=1736267654" alt="Schweißnahtbearbeitung mit mobiler Ausrüstung" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-right"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809032.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Anlagenbereich während einer Instandsetzung"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809032.jpeg?t=1736267654" alt="Anlagenbereich während einer Instandsetzung" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809033.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Kontrollblick auf reparierte Pressenzone"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809033.jpeg?t=1736267654" alt="Kontrollblick auf reparierte Pressenzone" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-right"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809034.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Schweißarbeiten an metallischer Tragstruktur"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809034.jpeg?t=1736267654" alt="Schweißarbeiten an metallischer Tragstruktur" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809035.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Einsatzfoto einer laufenden Reparaturmaßnahme"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809035.jpeg?t=1736267654" alt="Einsatzfoto einer laufenden Reparaturmaßnahme" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-right"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809036.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Bearbeitungsdetail an einer Maschine"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809036.jpeg?t=1736267654" alt="Bearbeitungsdetail an einer Maschine" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809037.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Reparaturfortschritt an einer Presseneinheit"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809037.jpeg?t=1736267654" alt="Reparaturfortschritt an einer Presseneinheit" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card gallery-card-wide reveal reveal-right"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809038.jpeg?t=1736267654"
+              data-gallery-item
+              data-caption="Vorbereitete Schweißstelle an einer Anlage"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809038.jpeg?t=1736267654" alt="Vorbereitete Schweißstelle an einer Anlage" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809039.jpg?t=1736267654"
+              data-gallery-item
+              data-caption="Wartungsbereich während technischer Bearbeitung"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809039.jpg?t=1736267654" alt="Wartungsbereich während technischer Bearbeitung" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-right"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809040.jpg?t=1736267654"
+              data-gallery-item
+              data-caption="Schweißreparatur an Bauteilkante"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809040.jpg?t=1736267654" alt="Schweißreparatur an Bauteilkante" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
+            </a>
+
+            <a
+              class="gallery-card reveal reveal-left"
+              href="https://www.msr-wala.de/s/cc_images/cache_2493809041.jpg?t=1736267654"
+              data-gallery-item
+              data-caption="Arbeitsschritt an einem mechanischen Pressenteil"
+            >
               <img src="https://www.msr-wala.de/s/cc_images/cache_2493809041.jpg?t=1736267654" alt="Arbeitsschritt an einem mechanischen Pressenteil" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
-              <img src="https://www.msr-wala.de/s/cc_images/cache_2493809042.jpg?t=1736267654" alt="Mobile Instandsetzung im Produktionsumfeld" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
-              <img src="https://www.msr-wala.de/s/cc_images/cache_2493809043.jpg?t=1736267654" alt="Ansicht eines reparierten Bereichs an einer Presse" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
-              <img src="https://www.msr-wala.de/s/cc_images/cache_2493809044.jpg?t=1736267654" alt="Technische Detailaufnahme einer Schweißnaht" loading="lazy" decoding="async" />
-            </figure>
-            <figure class="gallery-item reveal">
-              <img src="https://www.msr-wala.de/s/cc_images/cache_2493809045.jpg?t=1736267654" alt="Abschlussphase einer Reparaturarbeit" loading="lazy" decoding="async" />
-            </figure>
+            </a>
           </div>
         </div>
       </section>
@@ -161,6 +238,16 @@
       </section>
     </main>
 
+    <div class="gallery-lightbox" data-gallery-lightbox hidden aria-hidden="true">
+      <button type="button" class="gallery-lightbox-close" aria-label="Ansicht schließen" data-gallery-close>×</button>
+      <button type="button" class="gallery-lightbox-nav gallery-lightbox-prev" aria-label="Vorheriges Bild" data-gallery-prev>‹</button>
+      <figure class="gallery-lightbox-figure">
+        <img src="" alt="" data-gallery-image />
+        <figcaption data-gallery-caption></figcaption>
+      </figure>
+      <button type="button" class="gallery-lightbox-nav gallery-lightbox-next" aria-label="Nächstes Bild" data-gallery-next>›</button>
+    </div>
+
     <footer class="site-footer">
       <div class="container footer-grid">
         <p class="footer-meta">© <span id="year">2026</span> MSR WALA Mobile Schweiss-Reparatur · Gewerbepark Hardtwald 3 · 68723 Oftersheim</p>
@@ -176,5 +263,6 @@
 
     <script src="../assets/js/site-config.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/gallery.js"></script>
   </body>
 </html>

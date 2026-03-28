@@ -57,7 +57,7 @@
     });
 
     doc.addEventListener("click", function (event) {
-      if (window.innerWidth > 1120) {
+      if (window.innerWidth > 1200) {
         return;
       }
 
@@ -79,7 +79,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1120) {
+      if (window.innerWidth > 1200) {
         closeMenu();
       }
     });
@@ -93,6 +93,7 @@
       return;
     }
 
+    var viewportHeight = window.innerHeight || doc.documentElement.clientHeight || 0;
     var observer = new IntersectionObserver(
       function (entries, obs) {
         entries.forEach(function (entry) {
@@ -102,10 +103,16 @@
           }
         });
       },
-      { threshold: 0.16 }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
 
     doc.querySelectorAll(".reveal").forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top <= viewportHeight * 0.92) {
+        el.classList.add("is-visible");
+        return;
+      }
+
       observer.observe(el);
     });
   }

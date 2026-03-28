@@ -8,6 +8,9 @@
       name="description"
       content="MSR WALA Mobile Schweiß-Reparatur: Brenn-, Schleif- und Schweißarbeiten an Pressen, schnell und zuverlässig im In- und Ausland."
     />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,8 +18,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
     <header class="site-header">
@@ -52,24 +56,25 @@
     <main id="main-content">
       <section class="hero">
         <div class="container hero-grid">
-          <div class="reveal">
-            <p class="kicker">Mobile Schweißreparatur an Pressen</p>
-            <h1>Schnell, sicher, zuverlässig.</h1>
-            <p class="hero-copy">
+          <div class="home-hero-content" data-hero-sequence>
+            <p class="kicker home-hero-eyebrow">Mobile Schweißreparatur an Pressen</p>
+            <h1 class="home-hero-headline" data-hero-headline>Schnell, sicher, zuverlässig.</h1>
+            <p class="hero-copy home-hero-copy">
               Brenn-, Schleif- und Schweißarbeiten an Pressen im In- und Ausland. Wir unterstützen dabei,
               beschädigte Anlagen schnell und kosteneffizient wieder einsatzbereit zu machen.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="kontakt/">Kontakt aufnehmen</a>
-              <a class="btn btn-secondary" href="service/">Service ansehen</a>
+            <div class="hero-actions home-hero-actions">
+              <a class="btn btn-primary home-hero-cta home-hero-cta-primary" href="kontakt/">Kontakt aufnehmen</a>
+              <a class="btn btn-secondary home-hero-cta home-hero-cta-secondary" href="service/">Service ansehen</a>
             </div>
           </div>
 
-          <div class="hero-media panel reveal">
+          <div class="hero-media panel reveal home-hero-media">
             <img
-              src="https://www.msr-wala.de/s/cc_images/teaserbox_2480152348.jpg?t=1548849782"
-              alt="Mobile Schweißreparatur an einer Industriepresse"
-              loading="eager" fetchpriority="high"
+              src="https://www.msr-wala.de/s/cc_images/cache_2493809060.jpeg?t=1736267654"
+              alt="Mobile Schweißreparatur im Einsatz an einer Pressenkomponente"
+              loading="eager"
+              fetchpriority="high"
               decoding="async"
             />
           </div>
@@ -77,21 +82,26 @@
       </section>
 
       <section class="section-tight">
-        <div class="container metric-row reveal">
-          <article class="metric">
-            <strong>Seit 2015</strong>
+        <div class="container metric-row">
+          <article class="metric reveal reveal-left home-metric">
+            <strong class="metric-headline">
+              <span>Seit</span>
+              <span class="metric-value" data-count-target="2015" data-count-start="2011" data-count-duration="1100">2015</span>
+            </strong>
             <span>verlässlicher Ansprechpartner für Pressenreparaturen</span>
           </article>
-          <article class="metric">
-            <strong>24h</strong>
+          <article class="metric reveal reveal-right home-metric">
+            <strong class="metric-headline">
+              <span class="metric-value" data-count-target="24" data-count-start="0" data-count-duration="950" data-count-suffix="h">24h</span>
+            </strong>
             <span>Reparaturservice laut aktueller Leistungsbeschreibung</span>
           </article>
-          <article class="metric">
-            <strong>Vor Ort</strong>
+          <article class="metric reveal reveal-left home-metric">
+            <strong class="metric-headline"><span class="metric-value">Vor Ort</span></strong>
             <span>mobile Bearbeitung, De- und Remontage aus einer Hand</span>
           </article>
-          <article class="metric">
-            <strong>VT/PT/MT</strong>
+          <article class="metric reveal reveal-right home-metric">
+            <strong class="metric-headline"><span class="metric-value">VT/PT/MT</span></strong>
             <span>Pressenüberprüfung gemäß vorhandener Angebotsbeschreibung</span>
           </article>
         </div>
@@ -153,16 +163,8 @@
             </div>
           </header>
 
-          <div class="grid grid-2">
-            <figure class="card image-card reveal">
-              <img
-                src="https://www.msr-wala.de/s/cc_images/teaserbox_2472813493.jpeg?t=1489500806"
-                alt="Einsatzaufnahme einer mobilen Schweißreparatur"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="card image-card reveal">
+          <div class="home-teaser-grid">
+            <figure class="card image-card reveal home-teaser-item home-teaser-item-lead">
               <img
                 src="https://www.msr-wala.de/s/cc_images/teaserbox_2493835344.png?t=1737126389"
                 alt="Reparatursituation an einer Pressenanlage"
@@ -170,7 +172,7 @@
                 decoding="async"
               />
             </figure>
-            <figure class="card image-card reveal">
+            <figure class="card image-card reveal home-teaser-item">
               <img
                 src="https://www.msr-wala.de/s/cc_images/teaserbox_2493835345.png?t=1737126657"
                 alt="Bearbeitung eines metallischen Pressenbauteils"
@@ -178,7 +180,7 @@
                 decoding="async"
               />
             </figure>
-            <figure class="card image-card reveal">
+            <figure class="card image-card reveal home-teaser-item">
               <img
                 src="https://www.msr-wala.de/s/cc_images/teaserbox_2493835346.jpeg?t=1737127547"
                 alt="Detail einer Schweißreparatur an einem schweren Bauteil"
@@ -191,16 +193,18 @@
       </section>
 
       <section class="section">
-        <div class="container-tight panel cta-panel">
-          <p class="kicker">Nächster Schritt</p>
-          <h2>Ihre Anlage soll schnell wieder laufen?</h2>
-          <p class="hero-copy">
-            Rufen Sie uns an oder senden Sie eine Nachricht. Das Formular ist aktuell als UI-Platzhalter angelegt und
-            wird im nächsten Schritt angebunden.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+49062029258530">+49 (0) 62 02 - 9 25 85 30</a>
-            <a class="btn btn-secondary" href="mailto:office@msr-wala.de">office@msr-wala.de</a>
+        <div class="container">
+          <div class="panel cta-panel home-final-cta reveal">
+            <p class="kicker">Nächster Schritt</p>
+            <h2>Ihre Anlage soll schnell wieder laufen?</h2>
+            <p class="hero-copy">
+              Rufen Sie uns an oder senden Sie eine Nachricht. Das Formular ist aktuell als UI-Platzhalter angelegt und
+              wird im nächsten Schritt angebunden.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:+49062029258530">+49 (0) 62 02 - 9 25 85 30</a>
+              <a class="btn btn-secondary" href="mailto:office@msr-wala.de">office@msr-wala.de</a>
+            </div>
           </div>
         </div>
       </section>
@@ -221,5 +225,6 @@
 
     <script src="assets/js/site-config.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/home.js"></script>
   </body>
 </html>
