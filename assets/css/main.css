@@ -169,7 +169,7 @@ textarea:focus-visible {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: calc(18px * var(--logo-ratio));
   min-height: calc(92px * var(--logo-ratio));
   margin: 0 auto;
@@ -225,7 +225,6 @@ textarea:focus-visible {
   width: max-content;
   margin-top: calc(16px * var(--logo-ratio));
   text-align: center;
-  margin-left: auto;
   margin-right: auto;
   font-size: calc(25px * var(--logo-ratio));
   font-weight: 400;
