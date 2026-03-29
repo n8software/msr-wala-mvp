@@ -573,25 +573,30 @@ body.subpage-hero-ready .hero-media img {
   position: sticky;
   top: calc(80px + 0.75rem);
   z-index: 70;
-  padding: 0.75rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  align-items: center;
+  width: 100%;
+  padding: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.65rem;
+  align-items: stretch;
   border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(244, 197, 21, 0.08), rgba(255, 255, 255, 0.01)),
+    rgba(12, 14, 16, 0.88);
 }
 
 .section-controller a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.46rem 0.8rem;
-  border-radius: 999px;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
   border: 1px solid var(--line);
   color: #d7dde8;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  white-space: nowrap;
+  text-align: center;
   transition: color 0.22s ease, border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease;
 }
 
@@ -605,6 +610,7 @@ body.subpage-hero-ready .hero-media img {
   color: #141414;
   background: var(--accent);
   border-color: transparent;
+  box-shadow: 0 8px 20px rgba(244, 197, 21, 0.28);
 }
 
 .content-section[data-section-target] {
@@ -622,6 +628,161 @@ body.subpage-hero-ready .hero-media img {
 
 .content-callout {
   margin-top: var(--space-4);
+}
+
+.section-clean {
+  max-width: 78ch;
+  color: var(--muted);
+}
+
+.section-clean p {
+  margin-top: 0;
+}
+
+.unternehmen-page .unternehmen-about-grid {
+  align-items: start;
+}
+
+.unternehmen-page .unternehmen-about-grid .card,
+.unternehmen-page .unternehmen-hauptsitz-grid .card {
+  height: 100%;
+}
+
+.unternehmen-page .unternehmen-fokus-grid {
+  align-items: start;
+}
+
+.unternehmen-page .unternehmen-branchen-intro {
+  margin-bottom: var(--space-4);
+}
+
+.unternehmen-page .unternehmen-branchen-grid {
+  margin-top: var(--space-4);
+  gap: calc(var(--space-4) + 0.45rem);
+}
+
+.unternehmen-page .unternehmen-hauptsitz-lead {
+  margin-bottom: var(--space-4);
+}
+
+.unternehmen-page .unternehmen-hauptsitz-grid {
+  align-items: stretch;
+}
+
+.unternehmen-page .unternehmen-hauptsitz-grid .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.service-page .service-hero-media img {
+  object-position: 50% 24%;
+}
+
+.service-page .service-schweiss-lead p:last-child {
+  margin-bottom: 0;
+}
+
+.service-page .service-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.45rem;
+  margin-bottom: 2.1rem;
+}
+
+.service-page .service-schweiss-grid {
+  align-items: start;
+}
+
+.service-page .service-schweiss-image {
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.service-page .service-schweiss-image img {
+  aspect-ratio: 4 / 5;
+  max-height: 350px;
+  object-position: 50% 42%;
+}
+
+.service-page .service-projekte-grid {
+  align-items: start;
+}
+
+.service-page .service-riss-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+.service-page .service-riss-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-page .service-riss-right {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: var(--space-4);
+}
+
+.service-page .service-riss-benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-page .service-riss-closing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-page .service-neu-intro {
+  margin-bottom: var(--space-4);
+}
+
+.service-page .service-sonstiges-grid {
+  margin-top: var(--space-4);
+}
+
+.prozesse-page .hero-media img {
+  object-position: 50% 28%;
+}
+
+.prozesse-page .prozesse-compact-list {
+  margin-bottom: var(--space-4);
+}
+
+.prozesse-page .prozesse-mini-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.prozesse-page .prozesse-mini-grid .card {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+}
+
+.prozesse-page .prozesse-media-row {
+  margin-top: var(--space-4);
+}
+
+.prozesse-page .prozesse-media-row .image-card img {
+  margin-bottom: 0;
+  aspect-ratio: 16 / 10;
+}
+
+.prozesse-page .prozesse-nach-grid {
+  align-items: stretch;
+}
+
+.prozesse-page .prozesse-nach-grid .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .grid {
@@ -1056,6 +1217,7 @@ body.subpage-hero-ready .hero-media img {
 
   .section-controller {
     top: calc(80px + 0.45rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .js .nav-toggle {
@@ -1091,6 +1253,18 @@ body.subpage-hero-ready .hero-media img {
 
   .footer-nav {
     justify-content: flex-start;
+  }
+
+  .service-page .service-riss-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-page .service-riss-right {
+    grid-template-rows: auto;
+  }
+
+  .prozesse-page .prozesse-mini-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1155,6 +1329,16 @@ body.subpage-hero-ready .hero-media img {
 }
 
 @media (max-width: 700px) {
+  .section-controller {
+    grid-template-columns: 1fr;
+  }
+
+  .service-page .service-schweiss-grid,
+  .service-page .service-projekte-grid,
+  .service-page .service-sonstiges-grid {
+    grid-template-columns: 1fr;
+  }
+
   .service-page .service-process-table-card h2,
   .service-page .service-overview-card h2 {
     margin-bottom: 0.85rem;
