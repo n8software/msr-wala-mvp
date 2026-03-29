@@ -243,25 +243,38 @@
   }
 
   function setupDemoNoticeModal() {
-    var storageKey = "msr_demo_notice_seen_v1";
+    var visitCounterKey = "msr_demo_home_visit_count_v1";
+    var isHomePage = doc.body.classList.contains("home-page");
+    var visitCount = 0;
 
-    function hasSeenNotice() {
+    function readVisitCount() {
       try {
-        return window.sessionStorage.getItem(storageKey) === "1";
+        var raw = window.localStorage.getItem(visitCounterKey) || "0";
+        var parsed = Number.parseInt(raw, 10);
+        return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
       } catch (_error) {
-        return doc.body.getAttribute("data-demo-notice-seen") === "1";
+        var attrValue = doc.body.getAttribute("data-demo-home-visits") || "0";
+        var attrParsed = Number.parseInt(attrValue, 10);
+        return Number.isFinite(attrParsed) && attrParsed > 0 ? attrParsed : 0;
       }
     }
 
-    function setSeenNotice() {
+    function writeVisitCount(nextCount) {
       try {
-        window.sessionStorage.setItem(storageKey, "1");
+        window.localStorage.setItem(visitCounterKey, String(nextCount));
       } catch (_error) {
-        doc.body.setAttribute("data-demo-notice-seen", "1");
+        doc.body.setAttribute("data-demo-home-visits", String(nextCount));
       }
     }
 
-    if (hasSeenNotice()) {
+    if (!isHomePage) {
+      return;
+    }
+
+    visitCount = readVisitCount() + 1;
+    writeVisitCount(visitCount);
+
+    if (visitCount % 3 !== 0) {
       return;
     }
 
@@ -298,7 +311,6 @@
       }
 
       isClosed = true;
-      setSeenNotice();
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
       doc.body.classList.remove("demo-modal-open");
