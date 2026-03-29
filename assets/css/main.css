@@ -785,6 +785,59 @@ body.subpage-hero-ready .hero-media img {
   justify-content: center;
 }
 
+@media (min-width: 1201px) {
+  .service-page .service-schweiss-image img {
+    aspect-ratio: 5 / 4;
+    max-height: 300px;
+  }
+
+  .service-page .service-schweiss-grid > .card:nth-of-type(3) h3:nth-of-type(2) {
+    margin-top: 1rem;
+  }
+
+  .service-page .service-projekte-grid {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1200px) {
+  .prozesse-page .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.35rem, 2.7vw, 2rem);
+  }
+
+  .prozesse-page .hero-media {
+    aspect-ratio: 16 / 11;
+  }
+
+  .prozesse-page .hero-media img {
+    object-position: 52% 43%;
+  }
+
+  .prozesse-page .prozesse-media-row,
+  .prozesse-page .prozesse-nach-grid {
+    align-items: start;
+  }
+
+  .prozesse-page .prozesse-media-row .image-card,
+  .prozesse-page .prozesse-nach-grid .image-card {
+    max-width: 380px;
+    margin-inline: auto;
+    padding: 0.8rem;
+  }
+
+  .prozesse-page .prozesse-media-row .image-card img,
+  .prozesse-page .prozesse-nach-grid .image-card img {
+    width: 100%;
+    max-height: 210px;
+    margin-bottom: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 .grid {
   display: grid;
   gap: var(--space-4);
