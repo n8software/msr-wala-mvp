@@ -216,6 +216,7 @@ body.gallery-lightbox-open {
   .gallery-page .gallery-card-feature,
   .gallery-page .gallery-card-wide {
     grid-column: auto;
+    grid-row: auto;
     min-height: 0;
     aspect-ratio: 16 / 10;
   }

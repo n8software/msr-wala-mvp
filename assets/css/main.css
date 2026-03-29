@@ -791,16 +791,34 @@ body.subpage-hero-ready .hero-media img {
     max-height: 300px;
   }
 
-  .service-page .service-schweiss-grid > .card:nth-of-type(3) h3:nth-of-type(2) {
-    margin-top: 1rem;
-  }
-
   .service-page .service-projekte-grid {
     margin-top: 1rem;
   }
 }
 
 @media (min-width: 701px) and (max-width: 1200px) {
+  .service-page .service-schweiss-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.72fr);
+    gap: clamp(0.9rem, 1.9vw, 1.2rem);
+    align-items: start;
+  }
+
+  .service-page .service-schweiss-image {
+    width: 100%;
+    max-width: 290px;
+    justify-self: center;
+    padding: 0.55rem;
+  }
+
+  .service-page .service-schweiss-image img {
+    width: 100%;
+    max-height: 190px;
+    margin-bottom: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 50% 46%;
+  }
+
   .prozesse-page .hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
@@ -815,26 +833,57 @@ body.subpage-hero-ready .hero-media img {
     object-position: 52% 43%;
   }
 
-  .prozesse-page .prozesse-media-row,
-  .prozesse-page .prozesse-nach-grid {
+  .prozesse-page .prozesse-media-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 760px;
+    margin-top: 0.95rem;
+    margin-inline: auto;
     align-items: start;
   }
 
-  .prozesse-page .prozesse-media-row .image-card,
-  .prozesse-page .prozesse-nach-grid .image-card {
-    max-width: 380px;
-    margin-inline: auto;
-    padding: 0.8rem;
+  .prozesse-page .prozesse-media-row .image-card {
+    width: 100%;
+    max-width: 280px;
+    justify-self: center;
+    padding: 0.45rem;
   }
 
-  .prozesse-page .prozesse-media-row .image-card img,
-  .prozesse-page .prozesse-nach-grid .image-card img {
+  .prozesse-page .prozesse-media-row .image-card img {
     width: 100%;
-    max-height: 210px;
+    max-height: 168px;
     margin-bottom: 0;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
+  }
+
+  .prozesse-page .prozesse-nach-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    align-items: start;
+  }
+
+  .prozesse-page .prozesse-nach-grid .image-card {
+    width: 100%;
+    max-width: 320px;
+    justify-self: center;
+    padding: 0.45rem;
+  }
+
+  .prozesse-page .prozesse-nach-grid .image-card img {
+    width: 100%;
+    max-height: 180px;
+    margin-bottom: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (min-width: 701px) {
+  .service-page .service-schweiss-grid > .card:nth-of-type(3) h3:nth-of-type(2) {
+    margin-top: 1.35rem;
   }
 }
 
