@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { background: #111; display: flex; flex-direction: column; align-items: center; padding: 50px; gap: 50px; font-family: 'Oswald', sans-serif; }
+        .logo-container { display: flex; align-items: center; gap: 10px; color: white; }
+        
+        /* WSPÓLNE STYLOWANIE IKONY I NAPISU */
+        .icon { width: 60px; height: 60px; background: #ffcc00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: black; }
+        .text { font-size: 40px; font-weight: 700; letter-spacing: 2px; }
+        .subtext { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #aaa; margin-top: -10px; }
+
+        /* ANIMACJA 1: Wypalanie (Typing + Glow) */
+        .wypalanie .letter { opacity: 0; animation: reveal 0.5s forwards; }
+        @keyframes reveal { to { opacity: 1; text-shadow: 0 0 8px #ffcc00; } }
+
+        /* ANIMACJA 2: Iskry (Sparkle) */
+        .iskry .icon { animation: spark 1.5s infinite; }
+        @keyframes spark { 0%, 100% { box-shadow: 0 0 0px #ffcc00; } 50% { box-shadow: 0 0 20px #ffcc00; } }
+
+        /* ANIMACJA 3: Spawanie (Slide + Flash) */
+        .spawanie .text { animation: slideIn 1s ease-out; }
+        @keyframes slideIn { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <!-- PROJEKT 1: Wypalanie -->
+    <div class="logo-container wypalanie">
+        <div class="icon">MSR</div>
+        <div class="text">
+            <span class="letter" style="animation-delay: 0.1s">M</span><span class="letter" style="animation-delay: 0.2s">S</span><span class="letter" style="animation-delay: 0.3s">R</span>
+            <span class="letter" style="animation-delay: 0.4s">W</span><span class="letter" style="animation-delay: 0.5s">A</span><span class="letter" style="animation-delay: 0.6s">L</span><span class="letter" style="animation-delay: 0.7s">A</span>
+        </div>
+    </div>
+
+    <!-- PROJEKT 2: Iskry -->
+    <div class="logo-container iskry">
+        <div class="icon">★</div>
+        <div class="text">MSR WALA</div>
+    </div>
+
+    <!-- PROJEKT 3: Spawanie -->
+    <div class="logo-container spawanie">
+        <div class="icon">MSR</div>
+        <div>
+            <div class="text">MSR WALA</div>
+            <div class="subtext">MOBILE SCHWEISS-REPARATUR</div>
+        </div>
+    </div>
+
+</body>
+</html>

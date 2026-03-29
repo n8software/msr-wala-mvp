@@ -1,0 +1,7 @@
+body {
+  margin: 0.5cm;
+}
+
+#screen { display: none; }
+#print { display: block; }
+#print canvas { max-width: 100% !important; }
