@@ -1516,7 +1516,7 @@ body.subpage-hero-ready .hero-media img {
   }
 
   .brand.brand-logo {
-    --logo-scale: 0.34;
+    --logo-scale: 0.408;
   }
 
   .section-controller {
@@ -1642,7 +1642,7 @@ body.subpage-hero-ready .hero-media img {
   }
 
   .brand.brand-logo {
-    --logo-scale: 0.32;
+    --logo-scale: 0.385;
   }
 
   .section-controller {
@@ -1732,7 +1732,7 @@ body.subpage-hero-ready .hero-media img {
 
 @media (max-width: 520px) {
   .brand.brand-logo {
-    --logo-scale: 0.29;
+    --logo-scale: 0.351;
   }
 }
 
