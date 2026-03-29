@@ -242,7 +242,118 @@
     });
   }
 
+  function setupDemoNoticeModal() {
+    var storageKey = "msr_demo_notice_seen_v1";
+
+    function hasSeenNotice() {
+      try {
+        return window.sessionStorage.getItem(storageKey) === "1";
+      } catch (_error) {
+        return doc.body.getAttribute("data-demo-notice-seen") === "1";
+      }
+    }
+
+    function setSeenNotice() {
+      try {
+        window.sessionStorage.setItem(storageKey, "1");
+      } catch (_error) {
+        doc.body.setAttribute("data-demo-notice-seen", "1");
+      }
+    }
+
+    if (hasSeenNotice()) {
+      return;
+    }
+
+    var modal = doc.createElement("div");
+    modal.className = "demo-modal";
+    modal.setAttribute("data-demo-modal", "");
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML =
+      '<div class="demo-modal__backdrop" data-demo-close></div>' +
+      '<section class="demo-modal__dialog panel" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title" aria-describedby="demo-modal-content" tabindex="-1">' +
+      '<h2 id="demo-modal-title">Hinweis zur Demo-Version</h2>' +
+      '<div class="demo-modal__content" id="demo-modal-content">' +
+      "<p>Diese Website ist derzeit eine Demo-Version und noch nicht die finale Produktionsversion.</p>" +
+      "<p>Alle Bereiche wurden auf Basis der aktuell vorliegenden Projektinhalte befüllt, um Struktur, Gestaltung und Navigationslogik realistisch darzustellen.</p>" +
+      "<p>Die Startseite ist aktuell noch als MVP-Version umgesetzt, um die grundsätzliche Richtung zu zeigen. Sie wird nach finaler Abstimmung der Inhalte entsprechend ergänzt und überarbeitet.</p>" +
+      "<p>Die Galerie enthält derzeit noch Bildmaterial aus der bisherigen Website. Diese Inhalte werden in der Produktionsversion durch die final vorgesehenen Medien ersetzt.</p>" +
+      "</div>" +
+      '<div class="demo-modal__actions">' +
+      '<button class="btn btn-primary demo-modal__confirm" type="button" data-demo-confirm>OK</button>' +
+      "</div>" +
+      "</section>";
+
+    doc.body.appendChild(modal);
+
+    var confirmButton = modal.querySelector("[data-demo-confirm]");
+    var dialog = modal.querySelector(".demo-modal__dialog");
+    var closeTargets = modal.querySelectorAll("[data-demo-close]");
+    var previousFocus = doc.activeElement;
+    var isClosed = false;
+
+    function closeModal() {
+      if (isClosed) {
+        return;
+      }
+
+      isClosed = true;
+      setSeenNotice();
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      doc.body.classList.remove("demo-modal-open");
+      doc.removeEventListener("keydown", onKeydown);
+
+      window.setTimeout(function () {
+        modal.remove();
+
+        if (previousFocus && typeof previousFocus.focus === "function") {
+          previousFocus.focus();
+        }
+      }, 180);
+    }
+
+    function onKeydown(event) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeModal();
+        return;
+      }
+
+      if (event.key === "Tab" && confirmButton) {
+        event.preventDefault();
+        confirmButton.focus();
+      }
+    }
+
+    if (confirmButton) {
+      confirmButton.addEventListener("click", closeModal);
+    }
+
+    closeTargets.forEach(function (target) {
+      target.addEventListener("click", closeModal);
+    });
+
+    doc.addEventListener("keydown", onKeydown);
+    doc.body.classList.add("demo-modal-open");
+    modal.setAttribute("aria-hidden", "false");
+
+    window.requestAnimationFrame(function () {
+      modal.classList.add("is-open");
+
+      if (confirmButton) {
+        confirmButton.focus();
+        return;
+      }
+
+      if (dialog) {
+        dialog.focus();
+      }
+    });
+  }
+
   doc.addEventListener("DOMContentLoaded", function () {
+    setupDemoNoticeModal();
     applyActiveNav();
     setupMobileNav();
     setupSectionControllers();
