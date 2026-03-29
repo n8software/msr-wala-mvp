@@ -172,7 +172,6 @@ textarea:focus-visible {
   justify-content: flex-start;
   gap: calc(18px * var(--logo-ratio));
   min-height: calc(92px * var(--logo-ratio));
-  margin: 0 auto;
 }
 
 .brand-logo .main-text {
