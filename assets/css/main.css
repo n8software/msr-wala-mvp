@@ -143,8 +143,8 @@ textarea:focus-visible {
   min-width: calc(var(--logo-width) * var(--logo-scale));
   max-width: calc(var(--logo-width) * var(--logo-scale));
   align-self: center;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 120%;
+  text-size-adjust: 120%;
 }
 
 .brand-logo-shell {
